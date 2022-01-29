@@ -10,7 +10,7 @@ This is an atomic lock-free hash map implementation.
   
 Usage:
 
-```
+```c++
 #include <lockfree-hash.hh>
 
 lockfree::map<32, std::string, counter_t> my_map;
@@ -28,7 +28,7 @@ for (counter_t& c : my_map) {
 
 Note: the constructor of your value type (e.g. `counter_t` in the example) *must* accept the key as the argument:
 
-```
+```c++
 struct counter_t {
     std::atomic<int> value;
     counter_t(const std::string& key) : value(0) {}
